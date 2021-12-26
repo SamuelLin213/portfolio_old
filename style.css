@@ -20,6 +20,8 @@ a.visited {
   height: auto;
 
   position: fixed;
+
+  z-index: 10;
 }
 
 body {
@@ -60,6 +62,8 @@ body {
   text-decoration: none;
 
   padding-bottom: 100px;
+
+  z-index: 5;
 }
 
 .language {
@@ -100,6 +104,11 @@ body {
 
   margin: none;
   padding: none;
+
+  filter: opacity(1);
+  transition: 0.3s ease-in-out;
+
+  border: 2px solid rgba(63, 127, 191, 0.6);
 }
 
 .projectName {
@@ -107,14 +116,21 @@ body {
   font-weight: 0;
   display: inline-block;
 
+  color: black;
+  transition: 0.3s ease-in-out;
+
   background-color: rgba(63, 127, 191, 0.6);
-  width: 100%;
+  width: 101%;
   height: 15%;
   margin-left: 20px;
   padding: 20px 0px;
 }
 
-.project-tile .titleHover {
+.project-tile:hover .projectName{
+  color: rgba(191, 63, 63, 0.7);
+}
+
+.project-tile .titleHover{
   display: inline;
   color: red;
   font-weight: 900;
@@ -122,8 +138,18 @@ body {
   transition: 0.7s;
 }
 
-.project-tile:hover .titleHover {
+.project-tile:hover .titleHover{
   opacity: 1;
+}
+
+.project-tile .projectImg {
+  filter: brightness(1);
+  transition: 0.3s ease-in-out;
+}
+
+.project-tile:hover .projectImg {
+  filter: brightness(.7);
+  transition: 0.3s ease-in-out;
 }
 
 #contact {
