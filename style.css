@@ -51,8 +51,10 @@ body {
 .description {
   font-family: cursive;
   width: 40%;
-  text-align: center;
+  text-align: left;
   margin: 15px;
+  line-height: 200%;
+  margin-left: 20%;
 }
 
 #projects {
