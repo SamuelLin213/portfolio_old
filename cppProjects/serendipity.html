@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S. Lin</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f62fa23133.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header id="navbar">
+<div class="navLinks">
+  <a href="../index.html#welcome-section">About</a>
+  <a href="../index.html#projects">Projects</a>
+  <a href="../index.html#contact">Contact</a>
+</div>
+</header>
+
+<div id="welcome-section">
+  <h1 class="title">
+    Serendipity Database
+  </h1>
+
+  <div class="description projectDescr">
+    Languages: C++<br>
+    Source code:<a href="https://github.com/SamuelLin213/CS1B/tree/main/Chapter%2013/A26" target="_blank">Github</a><br>
+    Brief introduction: This was a project I wrote in the summer of 2019, after taking a community college on C++(CS1B at Saddleback College).
+    At the time, I was new to pointers and arrays, so struggled with the concept of building a polished program with them. In 2021, after finishing
+    high school, and in preparation for college, I rewrote the program from scratch, this time finishing it, and at a much faster pace,
+    after finally grasping the gist of pointers. 
+  </div>
+</div>  
+
+<div id="projects">
+    <div class="projectSubtitle">
+        Project overview
+    </div>
+    <div class="projectNav">
+        <a href="#cashier">Cashier Module</a>
+        <pre>●</pre>
+        <a href="#inventory">Inventory Module</a>
+        <pre>●</pre>
+        <a href="#reports">Reports Module</a>
+    </div>
+    <div class="projectParagraphs">
+        This terminal-based program provides the functionalities of a cash register. Additionally, it maintains a database of books, with
+        the ability to modify items. Users are presented with a menu and can input an option to navigate to other menus. Book entries
+        are loaded into the database from a txt file upon execution. When the program exits, an updated database will be stored into the 
+        same txt file.<br>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296574/mainMenu_pnroo0.jpg" alt="Main Menu" class="projectSS">
+        From the main menu, users have 4 options:
+        <ul>
+            <li>Cashier Module: Simulates purchasing a book, quantity of purchased books are reflected in the database</li>
+            <li>Inventory Database Module: Modify the database</li>
+            <li>Report Module: Lists all books in the current database, has different listing filters</li>
+            <li>Exit: Quit the program, program will continue to run and display menus until this option is chosen</li>
+        </ul>
+    </div>
+
+    <div class="projectSubtitle" id="cashier">
+       Cashier Module 
+    </div>
+    <div class="projectParagraphs">
+        Upon entering the cashier module, users are prompted to enter the following fields:
+        <ul>
+            <li>Date: Today's date</li>
+            <li>Quantity of Book: quantity to be purchased(this value will be subtracted from current quantity)</li>
+            <li>ISBN: ISBN of book to be purchased</li>
+            <li>Title: Title of book to be purchased, doesn't have to be full title</li>
+            <li>Price: Retail price of book to be purchased</li>
+        </ul>
+        The book is searched for in the database, and if there's a match for the book with its ISBN or title, the user will be prompted
+        if they want to add another book to the purchase(adds onto the same receipt).<br><br>
+        However, if the book isn't found in the database, an error message will result, and user will be shown the main menu again. 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296574/cashier1_xkrzct.jpg" alt="Cashier Menu 1" class="projectSS">
+        If the user enters 'n' to adding another book, the receipt will be displayed. Otherwise, entering 'y' will result in the program
+        prompting for book info again. 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296574/cashier2_bpimmv.jpg" alt="Cashier Menu 2" class="projectSS">
+        The receipt gives an overview of the books purchased and the final price(including a calculated tax). The "Confirm purchase?" prompt 
+        will display a thank-you message alongside updating the quantity values in the database if 'y' is entered. Entering 'n' will 
+        proceed to print the next "Enter another transaction" prompt without a thank-you message nor updating quantity values. 
+        The "Enter another transactions" prompt will either lead back to the prompting of book info, or display the main menu again. 
+    </div>
+
+    <div class="projectSubtitle" id="inventory">
+        Inventory Database Module
+    </div>
+    <div class="projectParagraphs">
+        Upon choosing the inventory module, users are presented with 5 options:
+        <ul>
+            <li>Look up a book: search for a book in the database, if book is found its info will be displayed</li>
+            <li>Add a book: Add a book entry to the database</li>
+            <li>Edit a book's record: search for and edit existing entry</li>
+            <li>Delete a book: search for and delete existing entry</li>
+            <li>Return to main menu: goes back to the main menu</li>
+        </ul>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296778/inventoryMenu_czvmzh.jpg" alt="Inventory Menu" class="projectSS">
+    </div>
+    <div class="projectFunction">
+        Searching for a book    
+    </div>
+    <div class="projectParagraphs">
+        When the user chooses the search option, the program prompts for an input: either the ISBN, book title, publisher or author. All matching results
+        will be printed one at a time until the user picks a desired match, or no more matchs are found(in which case a message will be printed and the naviation
+        will return to the inventory module menu). 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296885/search1_ga0vou.jpg" alt="Search results" class="projectSS">
+        Assuming we choose the second match when searching "Hobbit", then its info will be displayed, and the program won't proceed until the 
+        user presses enter.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296885/search2_me2dyy.jpg" alt="Info of book match" class="projectSS">
+    </div>
+    <div class="projectFunction">
+        Adding a book
+    </div>
+    <div class="projectParagraphs">
+        To add a book to the database, the current database size has to be less than value of the constant DB_SIZE, which is currently set to 125.
+        If the current size is at 125, then an error message will appear, indicating that the database is full. 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642297722/add1_luhoon.jpg" alt="Full Database" class="projectSS">
+        However, in the case that our database has space, a menu will appear with values of the new item that the user can change. The pending values
+        on the right will update as values are changed. An important note to remember is that the new book won't be added until the user chooses
+        option 9 and saves it to the database. 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642297722/add2_m7jnk0.jpg" alt="Add to database" class="projectSS">
+        If the user types in information, but chooses option 0 before option 9, then no new book is added. 
+    </div>
+    <div class="projectFunction">
+        Editing an existing book
+    </div>
+    <div class="projectParagraphs">
+        Choosing the edit option calls the search function from earlier, along with displaying the maximum database size and the current size.
+        Matched entries will continue displaying until all matches are printed out or the user enters 'y'. 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642311587/edit1_iaz2ls.jpg" alt="Edit match" class="projectSS">
+        Once an entry is chosen, the info of the entry will be displayed, like in the search function from before. A prompt asks the user to
+        confirm their choice.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642311587/edit2_bkxzp9.jpg" alt="Edit info" class="projectSS">
+        After confirming the entry is the book to be edited, the menu from add book function is shown, and users can change the value
+        of the entry as they wish.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642311587/edit3_fakbzs.jpg" alt="Edit menu" class="projectSS">
+    </div>
+    <div class="projectFunction">
+        Deleting a book
+    </div>
+    <div class="projectParagraphs"> 
+        The delete function is extremely similar to the edit function, in that the search function is first called, and upon choosing an entry,
+        its info will be displayed, along with a final confirmation. Once the book is deleted, the user will be prompted whether they
+        want to delete another entry.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642312778/delete_yry259.jpg" alt="Edit menu" class="projectSS">
+    </div>
+
+    <div class="projectSubtitle" id="reports">
+        Report Module
+    </div>
+    <div class="projectParagraphs">
+        The reports module allows users to list out all book entries in the current database, and can be filtered with a few options. There are 
+        six different report variations and seven total options:
+        <ul>
+            <li>Inventory listing: lists all info for each entry</li>
+            <li>Inventory wholesale Value: Displays title, isbn, quantity and wholesale cost of entries; shows total wholesale cost of all entries at the end</li>
+            <li>Inventory Retail Value: Displays title, isbn, quantity and retail cost of entries; shows total retail cost of all entries at the end</li>
+            <li>Listing by Quantity: Displays title, isbn and quantity; filters entries by quantity from highest to lowest</li>
+            <li>Listing by Cost: Displays title, isbn and wholesale cost; filters entries by wholesame cost from highest to lowest</li>
+            <li>Listing by Age: Displays title, isbn, quantity and date added; filters entries by date added from oldest to newest</li>
+            <li>Return to Main Menu: Returns navigation back to the main menu</li>
+        </ul>
+        Entries are displayed in pages of 10, with the report pausing every tenth entry to wait for the user to press enter. 
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642313991/reportMenu_mqdklx.jpg" alt="Edit menu" class="projectSS">
+        <div class="projectImgCap">
+            Inventory listing:
+        </div>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642315434/report1_h9py62.jpg" alt="Edit menu" class="projectSS">
+
+        <div class="projectImgCap">
+            Inventory wholesale value:
+        </div>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642315663/report2_fchpg3.jpg" alt="Edit menu" class="projectSS">
+
+        <div class="projectImgCap">
+            Inventory retail value:
+        </div>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642315663/report3_blnisx.jpg" alt="Edit menu" class="projectSS">
+
+        <div class="projectImgCap">
+            Listing by quantity:
+        </div>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642315663/report4_mrpx6t.jpg" alt="Edit menu" class="projectSS">
+
+        <div class="projectImgCap">
+            Listing by cost:
+        </div>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642315663/report5_xvrrdz.jpg" alt="Edit menu" class="projectSS">
+
+        <div class="projectImgCap">
+            Listing by age:
+        </div>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642315663/report6_xyumhk.jpg" alt="Edit menu" class="projectSS">
+    </div>
+    <div class="projectFunction">
+
+    </div>
+    <div class="projectFunction">
+        
+    </div>
+</div>
+
+<div id="contact">
+<div class="contactTitle">
+  Connect with me!
+</div>
+
+<div class="socials">
+  <a href="https://github.com/SamuelLin213" class="social" id="profile-link" target="_blank">
+    <i class="fab fa-github"></i>
+    Github
+  </a>
+
+  <a href="http://www.linkedin.com/in/ying-jia-lin" class="social" target="_blank">
+    <i class="fab fa-linkedin"></i>
+    LinkedIn
+  </a>
+
+  <a href="mailto:yingjiasamuellin@gmail.com" class="social" target="_blank">
+    <i class="far fa-envelope-open"></i>
+    Send an email
+  </a>
+</div>
+</div>
+</body>
+</html>
