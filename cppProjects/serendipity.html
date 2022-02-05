@@ -32,9 +32,9 @@
     Brief introduction: This was a project I wrote in the summer of 2019, after taking a community college on C++(CS1B at Saddleback College).
     At the time, I was new to pointers and arrays, so struggled with the concept of building a polished program with them. In 2021, after finishing
     high school, and in preparation for college, I rewrote the program from scratch, this time finishing it, and at a much faster pace,
-    after finally grasping the gist of pointers. 
+    after finally grasping the gist of pointers.
   </div>
-</div>  
+</div>
 
 <div id="projects">
     <div class="projectSubtitle">
@@ -50,7 +50,7 @@
     <div class="projectParagraphs">
         This terminal-based program provides the functionalities of a cash register. Additionally, it maintains a database of books, with
         the ability to modify items. Users are presented with a menu and can input an option to navigate to other menus. Book entries
-        are loaded into the database from a txt file upon execution. When the program exits, an updated database will be stored into the 
+        are loaded into the database from a txt file upon execution. When the program exits, an updated database will be stored into the
         same txt file. The database of book entries are stored in a double pointer, which stores an array of pointers.<br>
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296574/mainMenu_pnroo0.jpg" alt="Main Menu" class="projectSS">
         From the main menu, users have 4 options:
@@ -63,7 +63,7 @@
     </div>
 
     <div class="projectSubtitle" id="cashier">
-       Cashier Module 
+       Cashier Module
     </div>
     <div class="projectParagraphs">
         Upon entering the cashier module, users are prompted to enter the following fields:
@@ -76,15 +76,15 @@
         </ul>
         The book is searched for in the database, and if there's a match for the book with its ISBN or title, the user will be prompted
         if they want to add another book to the purchase(adds onto the same receipt).<br><br>
-        However, if the book isn't found in the database, an error message will result, and user will be shown the main menu again. 
+        However, if the book isn't found in the database, an error message will result, and user will be shown the main menu again.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296574/cashier1_xkrzct.jpg" alt="Cashier Menu 1" class="projectSS">
         If the user enters 'n' to adding another book, the receipt will be displayed. Otherwise, entering 'y' will result in the program
-        prompting for book info again. 
+        prompting for book info again.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296574/cashier2_bpimmv.jpg" alt="Cashier Menu 2" class="projectSS">
-        The receipt gives an overview of the books purchased and the final price(including a calculated tax). The "Confirm purchase?" prompt 
-        will display a thank-you message alongside updating the quantity values in the database if 'y' is entered. Entering 'n' will 
-        proceed to print the next "Enter another transaction" prompt without a thank-you message nor updating quantity values. 
-        The "Enter another transactions" prompt will either lead back to the prompting of book info, or display the main menu again. 
+        The receipt gives an overview of the books purchased and the final price(including a calculated tax). The "Confirm purchase?" prompt
+        will display a thank-you message alongside updating the quantity values in the database if 'y' is entered. Entering 'n' will
+        proceed to print the next "Enter another transaction" prompt without a thank-you message nor updating quantity values.
+        The "Enter another transactions" prompt will either lead back to the prompting of book info, or display the main menu again.
     </div>
 
     <div class="projectSubtitle" id="inventory">
@@ -102,14 +102,14 @@
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296778/inventoryMenu_czvmzh.jpg" alt="Inventory Menu" class="projectSS">
     </div>
     <div class="projectFunction">
-        Searching for a book    
+        Searching for a book
     </div>
     <div class="projectParagraphs">
         When the user chooses the search option, the program prompts for an input: either the ISBN, book title, publisher or author. All matching results
         will be printed one at a time until the user picks a desired match, or no more matchs are found(in which case a message will be printed and the naviation
-        will return to the inventory module menu). 
+        will return to the inventory module menu).
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296885/search1_ga0vou.jpg" alt="Search results" class="projectSS">
-        Assuming we choose the second match when searching "Hobbit", then its info will be displayed, and the program won't proceed until the 
+        Assuming we choose the second match when searching "Hobbit", then its info will be displayed, and the program won't proceed until the
         user presses enter.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642296885/search2_me2dyy.jpg" alt="Info of book match" class="projectSS">
     </div>
@@ -118,20 +118,20 @@
     </div>
     <div class="projectParagraphs">
         To add a book to the database, the current database size has to be less than value of the constant DB_SIZE, which is currently set to 125.
-        If the current size is at 125, then an error message will appear, indicating that the database is full. 
+        If the current size is at 125, then an error message will appear, indicating that the database is full.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642297722/add1_luhoon.jpg" alt="Full Database" class="projectSS">
         However, in the case that our database has space, a menu will appear with values of the new item that the user can change. The pending values
         on the right will update as values are changed. An important note to remember is that the new book won't be added until the user chooses
-        option 9 and saves it to the database. 
+        option 9 and saves it to the database.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642297722/add2_m7jnk0.jpg" alt="Add to database" class="projectSS">
-        If the user types in information, but chooses option 0 before option 9, then no new book is added. 
+        If the user types in information, but chooses option 0 before option 9, then no new book is added.
     </div>
     <div class="projectFunction">
         Editing an existing book
     </div>
     <div class="projectParagraphs">
         Choosing the edit option calls the search function from earlier, along with displaying the maximum database size and the current size.
-        Matched entries will continue displaying until all matches are printed out or the user enters 'y'. 
+        Matched entries will continue displaying until all matches are printed out or the user enters 'y'.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642311587/edit1_iaz2ls.jpg" alt="Edit match" class="projectSS">
         Once an entry is chosen, the info of the entry will be displayed, like in the search function from before. A prompt asks the user to
         confirm their choice.
@@ -143,7 +143,7 @@
     <div class="projectFunction">
         Deleting a book
     </div>
-    <div class="projectParagraphs"> 
+    <div class="projectParagraphs">
         The delete function is extremely similar to the edit function, in that the search function is first called, and upon choosing an entry,
         its info will be displayed, along with a final confirmation. Once the book is deleted, the user will be prompted whether they
         want to delete another entry.
@@ -154,7 +154,7 @@
         Report Module
     </div>
     <div class="projectParagraphs">
-        The reports module allows users to list out all book entries in the current database, and can be filtered with a few options. There are 
+        The reports module allows users to list out all book entries in the current database, and can be filtered with a few options. There are
         six different report variations and seven total options:
         <ul>
             <li>Inventory listing: lists all info for each entry</li>
@@ -165,7 +165,7 @@
             <li>Listing by Age: Displays title, isbn, quantity and date added; filters entries by date added from oldest to newest</li>
             <li>Return to Main Menu: Returns navigation back to the main menu</li>
         </ul>
-        Entries are displayed in pages of 10, with the report pausing every tenth entry to wait for the user to press enter. 
+        Entries are displayed in pages of 10, with the report pausing every tenth entry to wait for the user to press enter.
         <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1642313991/reportMenu_mqdklx.jpg" alt="Edit menu" class="projectSS">
         <div class="projectImgCap">
             Inventory listing:
@@ -211,7 +211,7 @@
 
     </div>
     <div class="projectFunction">
-        
+
     </div>
 </div>
 
@@ -234,6 +234,11 @@
   <a href="mailto:yingjiasamuellin@gmail.com" class="social" target="_blank">
     <i class="far fa-envelope-open"></i>
     Send an email
+  </a>
+
+  <a href="../resume.pdf" class="social" target="_blank">
+    <i class="fas fa-file"></i>
+    Check out my resume!
   </a>
 </div>
 </div>
