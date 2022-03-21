@@ -8,6 +8,13 @@ a.visited {
   color: black;
 }
 
+.jumpTo {
+  text-decoration: underline;
+  padding: 0px 20px;
+  font-size: 175%;
+  color: black;
+}
+
 #navbar {
   display: flex;
   flex-direction: row;
@@ -203,15 +210,15 @@ body {
 }
 
 .projectSubtitle {
-  font-size: 30px; 
+  font-size: 30px;
   text-align: center;
-  padding: 20px 0px 10px 0px; 
+  padding: 20px 0px 10px 0px;
 }
 
 .projectParagraphs {
   font-size: 20px;
   text-align: left;
-  margin: 0% 10% 0% 10%; 
+  margin: 0% 10% 0% 10%;
   padding: 10px 0px 10px 0px;
 }
 
