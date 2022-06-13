@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S. Lin</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f62fa23133.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header id="navbar">
+<div class="navLinks">
+  <a href="../index.html#welcome-section">About</a>
+  <a href="../index.html#projects">Projects</a>
+  <a href="../index.html#contact">Contact</a>
+</div>
+</header>
+
+<div id="welcome-section">
+  <h1 class="title">
+    Chinese Chess
+  </h1>
+
+  <div class="description projectDescr">
+    Languages: C++, Linux CLI<br>
+    Source code:<a href="https://github.com/SamuelLin213/ChineseChessCpp" target="_blank">Github</a><br>
+    Brief introduction: This was a program I wrote, alongside three other classmates, for the final project
+    of CS100("Software Construction", at UCR). In this project, we built a terminal-based Chinese Chess game,
+     using the strategy design pattern, in which the correct move() function is called, depending
+     on which piece resides at the chosen coordinates.
+  </div>
+</div>
+
+<div id="projects">
+    <div class="projectSubtitle">
+        Project overview
+    </div>
+    <div class="projectNav">
+        <a href="#start">Starting Menu</a>
+        <pre>●</pre>
+        <a href="#game">Game Menu</a>
+    </div>
+    <div class="projectSubtitle" id="start">
+       Starting Menu
+    </div>
+    <div class="projectParagraphs">
+        This terminal-based program allows users to play Chinese Chess directly from the command line,
+        with the board graphics represented through ASCII characters. Upon starting the program,
+        users are presented with three options. <br>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655104728/menu1_qsopai.png" alt="Starting Menu" class="projectSS">
+        The three options are as follows:
+        <ul>
+            <li>Start new game: allows users to start playing a new game, in which all
+            pieces are present and loaded into the default starting positions. </li>
+            <li>Load saved game: allows users to continue playing a previously saved game,
+            where pieces and coordinates are loaded in from a local .txt file. </li>
+            <li>Quit: quits the program</li>
+        </ul>
+    </div>
+
+    <div class="projectSubtitle" id="game">
+       Game Menu
+    </div>
+    <div class="projectParagraphs">
+        Once the user chooses to either start a new game or continue a saved game, the chessboard
+        will be displayed, along with an index and a user prompt.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655147531/game1_qkbssj.png" alt="Chessboard Display" class="projectSS">
+        The initial prompt asks for the coordinates of the piece they wish to move. An appropriate error message will
+        be displayed for the following cases:
+        <ul>
+            <li>Invalid coordinates: the x-value must be in range [1, 9]; the
+             y-value must be in range [1, 10]</li>
+            <li>Empty spot: an empty spot is chosen; there's no piece to move</li>
+            <li>Wrong color: a piece of the wrong color is chosen; i.e. player red
+            chooses a black piece to move</li>
+        </ul>
+        For example, here's the error message for the invalid coordinates:
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655147607/game2_me7sdb.png" alt="Initial Error" class="projectSS">
+        Once the user inputs valid coordinates for the piece to move, they're asked to confirm
+        their choice. Choosing 'n' will lead back to the initial prompt of the initial coordinates.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655150679/game3_qztqfm.png" alt="Confirm Choice" class="projectSS">
+        Otherwise, if the user confirms their choice, they'll be prompted to
+        enter the coordinates to move the piece to.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655150768/game4_qh5kf3.png" alt="Target Prompt" class="projectSS">
+        Similar to the intial prompt, the target prompt will display an error for the following cases:
+        <ul>
+            <li>Invalid coordinates: the x-value must be in range [1, 9]; the
+             y-value must be in range [1, 10]</li>
+            <li>Invalid move: the target coordinate doesn't follow the rules of Chinese Chess;
+            similar to regular Chess, each piece has a specific set of allowed moves</li>
+            <li>Wrong color: a target piece of the wrong color is chosen; i.e. player red
+            chooses a red piece to move to(attempting to capture their own piece)</li>
+        </ul>
+        The pieces of Chinese Chess adhere to the following rules:
+        <ul>
+            <li>General: can move one spot vertical or horizontally; however, they
+            must stay within the palace on their respective side of the board(x-values
+            in range [4, 6] and y-values in range [1, 3](for black general)/[8, 10]
+            (for red general))</li>
+            <li>Advisor: Similar to the general, they must stay inside the palace;
+            they can move one spot diagonally</li>
+            <li>Elephant: Can move 2 spots diagonally, but they cannot cross the river
+            (strip of blank spaces between y-values 5 and 6)</li>
+            <li>Horse: Move one spot horizontally/vertically, and then one spot
+            diagonally outwards; they cannot jump over occupied spaces</li>
+            <li>Chariot: Similar to the rook in Chess, chariots can move any number
+            of spaces horizontally or vertically</li>
+            <li>Pow/Cannon: They move like the chariot; however, when capturing,
+             there has to be a piece(either opponent or own piece works) in between</li>
+           <li>Soldier: Can only move one spot forward, until they cross the river;
+           once they cross the river, they can move either horizontally or forwards, but
+         they cannot move backwards</li>
+        </ul>
+        For more reference, check out<a href="https://www.ymimports.com/pages/how-to-play-xiangqi-chinese-chess"
+        style="font-size: 20px; padding: 0px" target="_blank"> this link.</a>
+        <br></br>
+        Assume the user attempts to move the soldier piece at (9, 7) backwards, to (9, 8).
+        Recall that this is an illegal move, as soldier cannot move backwards. An error message
+        will be displayed.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655153028/game5_yjlfgd.png" alt="Illegal Move" class="projectSS">
+        Choosing valid coordinates for both prompts results the piece being moved to the new location. If the new location contains
+        an opponents piece, that piece will be captured and removed from the chessboard. Here, the user moves the soldier piece from
+        (9, 7) to (9, 6).
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655154464/game6_ndtmvh.png" alt="Valid Move" class="projectSS">
+        After each player's turn, the "current turn" display at the top of the screen will be updated. The game ends when one of the player's
+        general piece is captured. Assume the current game looks like so:
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655154675/game7_sp6g7c.png" alt="Checkmate Position" class="projectSS">
+        Then, the player black can move their chariot at (6, 2) to capture the red general at (6, 9). A message with the winning team
+        will then be displayed.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655154803/game8_zrkgfp.png" alt="Checkmate Message" class="projectSS">
+        If either user chooses to quit in the middle of the game, by entering "0", they'll be prompted to save the game. Choosing "y"
+         will save the coordinates of all pieces on the board to a local .txt file. The user can then continue this saved game by
+          choosing the "Load saved game" option in the opening menu.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1655154938/save_u57q2j.png" alt="Save Message" class="projectSS">
+    </div>
+</div>
+
+<div id="contact">
+<div class="contactTitle">
+  Connect with me!
+</div>
+
+<div class="socials">
+  <a href="https://github.com/SamuelLin213" class="social" id="profile-link" target="_blank">
+    <i class="fab fa-github"></i>
+    Github
+  </a>
+
+  <a href="http://www.linkedin.com/in/ying-jia-lin" class="social" target="_blank">
+    <i class="fab fa-linkedin"></i>
+    LinkedIn
+  </a>
+
+  <a href="mailto:yingjiasamuellin@gmail.com" class="social" target="_blank">
+    <i class="far fa-envelope-open"></i>
+    Send an email
+  </a>
+
+  <a href="../resume.pdf" class="social" target="_blank">
+    <i class="fas fa-file"></i>
+    Check out my resume!
+  </a>
+</div>
+</div>
+</body>
+</html>
