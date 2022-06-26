@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S. Lin</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f62fa23133.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header id="navbar">
+<div class="navLinks">
+  <a href="../index.html#welcome-section">About</a>
+  <a href="../index.html#projects">Projects</a>
+  <a href="../index.html#contact">Contact</a>
+</div>
+</header>
+
+<div id="welcome-section">
+  <h1 class="title">
+    Qt Shape Parser
+  </h1>
+
+  <div class="description projectDescr">
+    Languages: C++, Qt Graphics<br>
+    Source code:<a href="https://github.com/SamuelLin213/QtShapeParser" target="_blank">Github</a><br>
+    Brief introduction: I wrote this program alongside 5 other classmates, for the final project
+    of CS1C at Saddleback Community College, over the summer of 2021. Using the Qt graphics framework,
+    we created a shape parser, which allows users to draw, move and remove shapes on the canvas.
+  </div>
+</div>
+
+<div id="projects">
+    <div class="projectSubtitle">
+        Project overview
+    </div>
+    <div class="projectNav">
+        <a href="#start">Starting Canvas</a>
+        <pre>●</pre>
+        <a href="#login">Logging In</a>
+        <pre>●</pre>
+        <a href="#adding">Drawing New Shapes</a>
+        <pre>●</pre>
+        <a href="#editing">Editing Shapes</a>
+        <pre>●</pre>
+        <a href="#testimonial">Testimonials</a>
+        <pre>●</pre>
+        <a href="#contactInfo">Contact Info</a>
+    </div>
+
+    <div class="projectSubtitle" id="start">
+       Starting Menu
+    </div>
+    <div class="projectParagraphs">
+        Using Qt frameworks to create a GUI, this shape parser program reads in shape attributes from a local .txt file.
+        This info is stored into a vector of pointers, and outputted to the canvas. Each shape is labelled
+        with a unique shape ID. Upon opening the program, all the buttons for drawing, moving and removing shapes are greyed out.<br>
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656198498/canvas1_zvccus.png" alt="Initial Canvas" class="projectSS">
+        By default, the user isn't logged in, so doesn't have admin permissions to edit the shapes.
+    </div>
+
+    <div class="projectSubtitle" id="login">
+       Logging In
+    </div>
+    <div class="projectParagraphs">
+        Clicking the "Login" button in the bottom right corner brings up a prompt for the username and password.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656198499/login_czc5n4.png" alt="Login 1" class="projectSS">
+        The correct account info that's stored in the program is "admin" for the username and "password" for the password(very original,
+        I know :D). For security reasons, the user input for the password box is dotted out.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656198498/login2_yimrx4.png" alt="Login 2" class="projectSS">
+        Once these credentials are entered, the buttons to edit shapes will become available for the user to select.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656198498/login3_yjs8eq.png" alt="Login 2" class="projectSS">
+    </div>
+
+    <div class="projectSubtitle" id="adding">
+       Drawing New Shapes
+    </div>
+    <div class="projectParagraphs">
+        When you add a shape, a prompt for the shape ID will pop up. To draw a new shape, a unique ID between 1 and 50 is entered.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656198727/add1_ezlvql.png" alt="Add 1" class="projectSS">
+        If a shape ID that already exists is entered, an error message will indicate this, and close the editing popup.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656198727/add2_tg9mhg.png" alt="Add 2" class="projectSS">
+        Each shape has a different set of dimensions, so have varying prompts, depending on the shape chosen:
+        <ul>
+          <li>Line: consists of two (x, y) points</li>
+          <ul>
+            <li>x-coordinate and y-coordinate for first point</li>
+            <li>x-coordinate and y-coordinate for second point</li>
+          </ul>
+          <li>Polyline: similar to line, but consists of N number of (x, y) points</li>
+          <ul>
+            <li>Number N points to draw</li>
+            <li>x-coordinate and y-coordinate for the Nth point</li>
+          </ul>
+          <li>Polygon: similar to polyline; however, the shape is closed and filled in</li>
+          <ul>
+            <li>Number N points to draw</li>
+            <li>x-coordinate and y-coordinate for the Nth point</li>
+          </ul>
+          <li>Rectangle:</li>
+          <ul>
+            <li>x-coordinate of the top left corner</li>
+            <li>y-coordinate of the top left corner</li>
+            <li>width</li>
+            <li>height</li>
+          </ul>
+          <li>Square: same as rectangle, but the last 2 dimensions(width, height) are the same</li>
+          <ul>
+            <li>x-coordinate of the top left corner</li>
+            <li>y-coordinate of the top left corner</li>
+            <li>edge length(height = width)</li>
+          </ul>
+          <li>Ellipse:</li>
+          <ul>
+            <li>x-coordinate of the center</li>
+            <li>y-coordinate of the center</li>
+            <li>semi-major axis</li>
+            <li>semi-minor axis</li>
+          </ul>
+          <li>Circle: same as ellipse, but both axis are the same length</li>
+          <ul>
+            <li>x-coordinate of the center</li>
+            <li>y-coordinate of the center</li>
+            <li>radius</li>
+          </ul>
+          <li>Text: invisible rectangle containing text</li>
+          <ul>
+            <li>x-coordinate of the top-left corner of container rectangle</li>
+            <li>y-coordinate of the top-left corner of container rectangle</li>
+            <li>width of container rectangle</li>
+            <li>height of container rectangle</li>
+          </ul>
+        </ul>
+        Upon the input of all prompts, the shape will get drawn onto the canvas, alongside the already existing shapes.<br><br>
+        For example, after entering the dimensions for a new rectangle with shape ID 9, it's drawn onto the canvas, with
+        the other shapes drawn using shape info read from the .txt file.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656201271/add3_jkekob.png" alt="Add 3" class="projectSS">
+    </div>
+
+    <div class="projectSubtitle" id="editing">
+       Editing Shapes
+    </div>
+    <div class="projectParagraphs">
+        When moving existing shapes, their respective prompts will pop up, similar to the process of adding new shapes.
+        The only difference is that the shape ID prompt will check that the ID inputted exists, in case the user attempts
+        to move a shape that hasn't been drawn.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656204779/move1_cja609.png" alt="Move 1" class="projectSS">
+        The process for removing shapes is much simpler. The only prompt will be for the shape ID. Once a valid ID is inputted,
+        the corresponding shape will be deleted from the canvas.<br><br>
+        As an example, we'll remove the polygon with shape ID 3:
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656204948/remove1_abq8mh.png" alt="Remove 1" class="projectSS">
+    </div>
+
+    <div class="projectSubtitle" id="testimonial">
+       Testimonials
+    </div>
+    <div class="projectParagraphs">
+        The user also has the ability to leave a testimonial for the shape parser program, through the "Make a testimonial!" button.
+        Upon choosing this, a window for text input for a name and testimonial pops up.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656205129/testimonial1_eyruot.png" alt="Testimonial 1" class="projectSS">
+        Once submitted, the testimonial is stored in a local .txt file.
+    </div>
+
+    <div class="projectSubtitle" id="contactInfo">
+       Contact Info
+    </div>
+    <div class="projectParagraphs">
+        Lastly, there's a button for the (fictitious) contact info of the program developer.
+        <img src="https://res.cloudinary.com/dui7nse3g/image/upload/v1656205243/contact_easxme.png" alt="Contact 1" class="projectSS">
+    </div>
+
+</div>
+
+<div id="contact">
+<div class="contactTitle">
+  Connect with me!
+</div>
+
+<div class="socials">
+  <a href="https://github.com/SamuelLin213" class="social" id="profile-link" target="_blank">
+    <i class="fab fa-github"></i>
+    Github
+  </a>
+
+  <a href="http://www.linkedin.com/in/ying-jia-lin" class="social" target="_blank">
+    <i class="fab fa-linkedin"></i>
+    LinkedIn
+  </a>
+
+  <a href="mailto:yingjiasamuellin@gmail.com" class="social" target="_blank">
+    <i class="far fa-envelope-open"></i>
+    Send an email
+  </a>
+
+  <a href="../resume.pdf" class="social" target="_blank">
+    <i class="fas fa-file"></i>
+    Check out my resume!
+  </a>
+</div>
+</div>
+</body>
+</html>
